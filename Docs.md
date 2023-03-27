@@ -50,3 +50,11 @@ Chúng ta sử dụng regex nhưng thường không chú ý đến một khái n
 - a(?:bc)* giá trị trong group sẽ không được capture lại Try it!
 - a(?<foo>bc) đặt tên cho group, mặc địng group sẽ có chỉ số là group[0], group[1], trường hợp này group sẽ là group[foo].
 - Đây là một quy tắc rất hữu ích nếu bạn bần trích xuất data từ một chuỗi. Bất kì thông tin nào được match sẽ được trích xuất vào trong một mảng, và ta có thể lấy nó thông qua chỉ mục của các group hoặc tên của group nếu đặt tên. Nếu không muốn bắt thông tin trong group, ta dùng ?:, khi đó group chỉ đơn thuần là một điều kiện và giá trị trong đó xẽ không được trích xuất.
+  
+### Kí hiệu chỉ phạm vi []
+- [abc] khớp với 1 ký tự a hoặc b hoặc c -> tương tự cách dùng a|b|c Try it!
+- [a-c] tác dụng như trên
+- [a-fA-F0-9] khớp với 1 ký tự nằm trong khoảng từ a -> z hoặc A -> Z hoặc 0 -> 9(đây chính là đoạn regex để bắt ký tự trong hệ HEX) Try it!
+- [0-9]% khớp với 1 ký tự từ 0 ->9 và theo sau nó là ký tự %
+- [^a-zA-Z] khớp với ký tự không nằm nằm trong a -> z và A -> Z Try it!
+  `Chú ý: Chức năng của một ký tự đặc biệt nào đó sẽ thay đổi khi nó nằm ở các vị trí khác nhau trong partten. ở ví dụ cuối cùng, ký tự ^ nằm trong [] thể hiện sự phủ định, chứ không phải xác định bắt đầu chuỗi. Nên cần chú ý vị trí của ký tự đặc biệt để biết chức năng của nó`
