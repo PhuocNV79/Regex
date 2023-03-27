@@ -1,4 +1,6 @@
+## Tài liệu tham khảo
 https://viblo.asia/p/hoc-regex-co-ban-GrLZDvxV5k0
+https://viblo.asia/p/phan-tich-mot-so-doan-regex-thuong-gap-va-cu-phap-regex-dac-biet-bJzKmLmE59N
 
 ## Quy tắc cơ bản
 ### Ký tự thể hiện vị trí  ^ và $
