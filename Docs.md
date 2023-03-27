@@ -57,4 +57,10 @@ Chúng ta sử dụng regex nhưng thường không chú ý đến một khái n
 - [a-fA-F0-9] khớp với 1 ký tự nằm trong khoảng từ a -> z hoặc A -> Z hoặc 0 -> 9(đây chính là đoạn regex để bắt ký tự trong hệ HEX) Try it!
 - [0-9]% khớp với 1 ký tự từ 0 ->9 và theo sau nó là ký tự %
 - [^a-zA-Z] khớp với ký tự không nằm nằm trong a -> z và A -> Z Try it!
-  `Chú ý: Chức năng của một ký tự đặc biệt nào đó sẽ thay đổi khi nó nằm ở các vị trí khác nhau trong partten. ở ví dụ cuối cùng, ký tự ^ nằm trong [] thể hiện sự phủ định, chứ không phải xác định bắt đầu chuỗi. Nên cần chú ý vị trí của ký tự đặc biệt để biết chức năng của nó`
+  `Chú ý: Chức năng của một ký tự đặc biệt nào đó sẽ thay đổi khi nó nằm ở các vị trí khác nhau trong partten. ở ví dụ cuối cùng, ký tự ^ nằm trong [] thể hiện sự phủ định, chứ không phải xác định bắt đầu chuỗi. Nên cần chú ý vị trí của ký tự đặc biệt để biết chức năng của nó`.
+
+  
+ ### Back-references  \1
+- ([abc])\1 sử dụng \1 sẽ match khi có 1 kí tự tiếp theo giống với kí tự được match trong group đầu tiên. Hơi khó hiểu, bạn xem ví dụ sẽ rõ hơn nhé Try it!
+- ([abc])([de])\2\1 Chúng ta có thể xử dụng \2,\3 để math kí tự giống với group thứ 2, 3 Try it!
+- (?<foo>[abc])\k<foo> Có thể đặt tên cho group thay cho số thứ tự Try it!
