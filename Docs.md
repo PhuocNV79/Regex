@@ -42,4 +42,11 @@
 Chúng ta sử dụng regex nhưng thường không chú ý đến một khái niệm cơ bản là flag(cờ). Biểu thức chính quy có dạng /abc/ và sau nó là flag với 3 giá trị sau:
 - `g (global)` tìm tất cả các đoạn ký tự khớp với mẫu tìm kiếm, nếu không có cờ g thì việc tìm kiếm sẽ dừng lại ở lần khớp đầu tiên.
 - `m (multi line)` khi có ^ và $ thì ^ sẽ là bắt đầu 1 dòng và $ là kết thúc 1 dòng trong chuỗi, nếu không có cờ m thì ^ và $ là bắt đầu và kết thúc của cả chuỗi
-- `i (insensitive)` không phân biệt chữ hoa chữ thường(vd:aBc sẽ khớp với pattern /abc/i )
+- `i (insensitive)` không phân biệt chữ hoa chữ thường(vd:aBc sẽ khớp với pattern /abc/i ).
+
+## Quy tắc nâng cao
+### Ký hiệu phân nhóm ()
+- a(bc) trong cặp dấu ngoặc là một group, giá trị trong group sẽ được capture lại Try it!
+- a(?:bc)* giá trị trong group sẽ không được capture lại Try it!
+- a(?<foo>bc) đặt tên cho group, mặc địng group sẽ có chỉ số là group[0], group[1], trường hợp này group sẽ là group[foo].
+- Đây là một quy tắc rất hữu ích nếu bạn bần trích xuất data từ một chuỗi. Bất kì thông tin nào được match sẽ được trích xuất vào trong một mảng, và ta có thể lấy nó thông qua chỉ mục của các group hoặc tên của group nếu đặt tên. Nếu không muốn bắt thông tin trong group, ta dùng ?:, khi đó group chỉ đơn thuần là một điều kiện và giá trị trong đó xẽ không được trích xuất.
