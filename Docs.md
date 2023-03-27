@@ -64,3 +64,11 @@ Chúng ta sử dụng regex nhưng thường không chú ý đến một khái n
 - ([abc])\1 sử dụng \1 sẽ match khi có 1 kí tự tiếp theo giống với kí tự được match trong group đầu tiên. Hơi khó hiểu, bạn xem ví dụ sẽ rõ hơn nhé Try it!
 - ([abc])([de])\2\1 Chúng ta có thể xử dụng \2,\3 để math kí tự giống với group thứ 2, 3 Try it!
 - (?<foo>[abc])\k<foo> Có thể đặt tên cho group thay cho số thứ tự Try it!
+  
+ ### Look-ahead and Look-behind (?=) và (?<=)
+- d(?=r) match với d và theo sau d là r, nhưng r sẽ không nằm trong data được match Try it!
+- (?<=r)d match với d và trước d là r , tất nhiên r cũng hông nằm trong data được match Try it!
+#### Nó cũng có toán tử phủ định
+
+- d(?!r) match với d và theo sau d là 1 ký tự không phải là r. Try it!
+- (?<!r)d match với d và trước d là 1 ký tự không phải r Try it!
