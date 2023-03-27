@@ -63,23 +63,23 @@ Chúng ta sử dụng regex nhưng thường không chú ý đến một khái n
 - Đây là một quy tắc rất hữu ích nếu bạn bần trích xuất data từ một chuỗi. Bất kì thông tin nào được match sẽ được trích xuất vào trong một mảng, và ta có thể lấy nó thông qua chỉ mục của các group hoặc tên của group nếu đặt tên. Nếu không muốn bắt thông tin trong group, ta dùng ?:, khi đó group chỉ đơn thuần là một điều kiện và giá trị trong đó xẽ không được trích xuất.
   
 ### Kí hiệu chỉ phạm vi []
-- [abc] khớp với 1 ký tự a hoặc b hoặc c -> tương tự cách dùng a|b|c 
-- [a-c] tác dụng như trên
-- [a-fA-F0-9] khớp với 1 ký tự nằm trong khoảng từ a -> z hoặc A -> Z hoặc 0 -> 9(đây chính là đoạn regex để bắt ký tự trong hệ HEX)
-- [0-9]% khớp với 1 ký tự từ 0 ->9 và theo sau nó là ký tự %
-- [^a-zA-Z] khớp với ký tự không nằm nằm trong a -> z và A -> Z
+- `[abc]` khớp với 1 ký tự a hoặc b hoặc c -> tương tự cách dùng a|b|c 
+- `[a-c]` tác dụng như trên
+- `[a-fA-F0-9]` khớp với 1 ký tự nằm trong khoảng từ a -> z hoặc A -> Z hoặc 0 -> 9(đây chính là đoạn regex để bắt ký tự trong hệ HEX)
+- `[0-9]%` khớp với 1 ký tự từ 0 ->9 và theo sau nó là ký tự %
+- `[^a-zA-Z]` khớp với ký tự không nằm nằm trong a -> z và A -> Z
   `Chú ý: Chức năng của một ký tự đặc biệt nào đó sẽ thay đổi khi nó nằm ở các vị trí khác nhau trong partten. ở ví dụ cuối cùng, ký tự ^ nằm trong [] thể hiện sự phủ định, chứ không phải xác định bắt đầu chuỗi. Nên cần chú ý vị trí của ký tự đặc biệt để biết chức năng của nó`.
 
   
  ### Back-references  \1
-- ([abc])\1 sử dụng \1 sẽ match khi có 1 kí tự tiếp theo giống với kí tự được match trong group đầu tiên. Hơi khó hiểu, bạn xem ví dụ sẽ rõ hơn nhé
-- ([abc])([de])\2\1 Chúng ta có thể xử dụng \2,\3 để math kí tự giống với group thứ 2, 3 
-- (?<foo>[abc])\k<foo> Có thể đặt tên cho group thay cho số thứ tự 
+- `([abc])\1` sử dụng \1 sẽ match khi có 1 kí tự tiếp theo giống với kí tự được match trong group đầu tiên. Hơi khó hiểu, bạn xem ví dụ sẽ rõ hơn nhé
+- `([abc])([de])\2\1` Chúng ta có thể xử dụng \2,\3 để math kí tự giống với group thứ 2, 3 
+- `(?<foo>[abc])\k<foo>` Có thể đặt tên cho group thay cho số thứ tự 
   
  ### Look-ahead and Look-behind (?=) và (?<=)
-- d(?=r) match với d và theo sau d là r, nhưng r sẽ không nằm trong data được match 
-- (?<=r)d match với d và trước d là r , tất nhiên r cũng hông nằm trong data được match
+- `d(?=r)` match với d và theo sau d là r, nhưng r sẽ không nằm trong data được match 
+- `(?<=r)d` match với d và trước d là r , tất nhiên r cũng hông nằm trong data được match
 #### Nó cũng có toán tử phủ định
 
-- d(?!r) match với d và theo sau d là 1 ký tự không phải là r. 
-- (?<!r)d match với d và trước d là 1 ký tự không phải r 
+- `d(?!r)` match với d và theo sau d là 1 ký tự không phải là r. 
+- `(?<!r)d` match với d và trước d là 1 ký tự không phải r 
